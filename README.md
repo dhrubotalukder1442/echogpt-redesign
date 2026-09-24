@@ -78,7 +78,7 @@ Every push to `main` triggers an automatic redeploy.
 
 | Landing | Chat |
 |---|---|
-| ![Landing desktop](docs/screenshots/01-landing-desktop.png) | ![Chat desktop](docs/screenshots/03-chat-desktop.png) |
+| ![Landing page](docs/screenshots/01-landing-desktop.png) | ![Chat desktop](docs/screenshots/03-chat-desktop.png) |
 | ![Landing mobile](docs/screenshots/02-landing-mobile.png) | ![Chat mobile](docs/screenshots/04-chat-mobile.png) |
 
 | Extension | Login |
