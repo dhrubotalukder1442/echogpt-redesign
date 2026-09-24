@@ -3,7 +3,7 @@
 A frontend redesign of the EchoGPT web app, landing page and Chrome extension.
 Built as a frontend internship task. There is **no backend**: every AI reply is a placeholder.
 
-**Live demo:** _add your Vercel link here_
+**Live demo:** [(https://echogpt-redesign-tau.vercel.app/)]
 
 ## Routes
 
@@ -65,6 +65,15 @@ npm run build
 npm run start
 ```
 
+## Deployment
+
+Deployed on [Vercel](https://vercel.com) and connected to this GitHub repo.
+Every push to `main` triggers an automatic redeploy.
+
+- Framework preset: Next.js (auto detected)
+- Build command: `npm run build`
+- No environment variables are needed, because the project has no backend
+
 ## Screenshots
 
 | Landing | Chat |
@@ -84,3 +93,8 @@ npm run start
 - Conversations live in memory and reset on refresh.
 - Pricing and model descriptions are placeholder content.
 
+## Demo tips
+
+- Type `/error` in a chat message to preview the error state
+- On `/extension`, select a sentence on the fake page and press Ctrl/Cmd + Shift + E
+- Log in with any valid email and an 8+ character password (no real account is created)
