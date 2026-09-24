@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EchoGPT Redesign
 
-## Getting Started
+A frontend redesign of the EchoGPT web app, landing page and Chrome extension.
+Built as a frontend internship task. There is **no backend**: every AI reply is a placeholder.
 
-First, run the development server:
+**Live demo:** _add your Vercel link here_
+
+## Routes
+
+| Route | What it is |
+|---|---|
+| `/` | Landing page |
+| `/chat` | Web app: chat, model selector, history |
+| `/extension` | Chrome side panel redesign, shown inside a fake browser |
+| `/login`, `/signup` | Auth screens (UI only) |
+| `/privacy`, `/support` | Info pages |
+
+## What I built
+
+**Web app**
+- Sidebar with conversation history, search and delete
+- Model selector, quick actions, auto-resizing prompt box
+- Loading skeletons, empty state, no-results state, and an error state with retry
+- Light and dark theme, responsive mobile drawer
+
+**Landing page**
+- Navbar, hero, AI models, features, product preview, Chrome extension, why EchoGPT, pricing, FAQ, CTA, footer
+- "Add to Chrome" button that links to the Chrome Web Store listing
+
+**Chrome extension redesign**
+- Side panel layout docked inside a fake browser window (full screen on mobile)
+- Chat, model selector, page context toggle, history, settings
+- Quick actions: summarize, explain simply, key points, translate, explain selected text
+- Selected text detection and a Ctrl/Cmd + Shift + E shortcut demo
+- Settings: default model, API endpoint field (never called), privacy note
+
+**Auth UI**
+- Log in and sign up with validation and show/hide password
+- Account menu with logout
+
+## Design and accessibility notes
+
+- Light and dark themes use CSS variables, so colors stay consistent across every page
+- Icon buttons and inputs have labels, focus rings are visible, and Escape closes menus
+- Chat updates are announced with live regions, and reduced-motion is respected
+- Layouts were checked from 360px to 1440px wide
+
+## Tech stack
+
+Next.js (App Router), TypeScript, Tailwind CSS, lucide-react
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Production build:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+| Landing | Chat |
+|---|---|
+| ![Landing desktop](docs/screenshots/01-landing-desktop.png) | ![Chat desktop](docs/screenshots/03-chat-desktop.png) |
+| ![Landing mobile](docs/screenshots/02-landing-mobile.png) | ![Chat mobile](docs/screenshots/04-chat-mobile.png) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Extension | Login |
+|---|---|
+| ![Extension desktop](docs/screenshots/05-extension-desktop.png) | ![Login](docs/screenshots/07-login.png) |
+| ![Extension mobile](docs/screenshots/06-extension-mobile.png) | |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Limitations
 
-## Deploy on Vercel
+- Frontend only. No real authentication and no real AI requests.
+- Demo sign-in and extension settings are stored in `localStorage`.
+- Conversations live in memory and reset on refresh.
+- Pricing and model descriptions are placeholder content.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
